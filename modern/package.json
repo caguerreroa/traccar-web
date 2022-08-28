@@ -1,7 +1,7 @@
 {
   "name": "traccar",
   "version": "5.3.0",
-  "proxy":"koiosapps.com:8082",
+  
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
