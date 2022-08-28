@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffectAsync } from './reactHelper';
 import { sessionActions } from './store';
 
+
+const sockeServertUrl = "koiosapps.com:8082"
 const ServerProvider = ({
   children,
 }) => {
@@ -16,7 +18,7 @@ const ServerProvider = ({
   useEffectAsync(async () => {
     if (!error) {
       try {
-        const response = await fetch('/api/server');
+        const response = await fetch('http://koiosapps.com:8082/api/server');
         if (response.ok) {
           dispatch(sessionActions.updateServer(await response.json()));
         } else {
