@@ -91,7 +91,7 @@ const SocketController = () => {
         }
       };
     }
-    const response = await fetch(`http://${HOST_URL}/api/session`);
+    const response = await fetch('/api/session');
     if (response.ok) {
       dispatch(sessionActions.updateUser(await response.json()));
     } else {
