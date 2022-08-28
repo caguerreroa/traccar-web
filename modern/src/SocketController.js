@@ -31,12 +31,12 @@ const SocketController = () => {
 
   const features = useFeatures();
 
-  const sockeServertUrl = "koiosapps.com:8082"
+  const HOST_URL = "koiosapps.com:8082"
   const sockeDefaulttUrl = window.location.host
 
   const connectSocket = () => {
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const socket = new WebSocket(`${protocol}//${sockeServertUrl}/api/socket`);
+    const socket = new WebSocket(`${protocol}//${HOST_URL}/api/socket`);
     socketRef.current = socket;
 
     socket.onopen = () => {
@@ -91,7 +91,7 @@ const SocketController = () => {
         }
       };
     }
-    const response = await fetch('/api/session');
+    const response = await fetch(`http://${HOST_URL}/api/session`);
     if (response.ok) {
       dispatch(sessionActions.updateUser(await response.json()));
     } else {
