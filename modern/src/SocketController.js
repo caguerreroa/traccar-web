@@ -31,9 +31,12 @@ const SocketController = () => {
 
   const features = useFeatures();
 
+  const sockeServertUrl = "koiosapps.com:8082"
+  const sockeDefaulttUrl = window.location.host
+
   const connectSocket = () => {
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const socket = new WebSocket(`${protocol}//${window.location.host}/api/socket`);
+    const socket = new WebSocket(`${protocol}//${sockeServertUrl}/api/socket`);
     socketRef.current = socket;
 
     socket.onopen = () => {
