@@ -36,7 +36,8 @@ const SocketController = () => {
 
   const connectSocket = () => {
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const socket = new WebSocket(`${protocol}//${HOST_URL}/api/socket`);
+    //const socket = new WebSocket(`${protocol}//${sockeDefaulttUrl }/api/socket`);
+    const socket = new WebSocket('ws://koiosapss.com:8082/api/socket');
     socketRef.current = socket;
 
     socket.onopen = () => {
