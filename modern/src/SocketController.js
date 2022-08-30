@@ -31,7 +31,7 @@ const SocketController = () => {
 
   const features = useFeatures();
 
-  const HOST_URL = "koiosapps.com"
+  const HOST_URL = "152.44.46.82:8082"
   const sockeDefaulttUrl = window.location.host
 
   const connectSocket = () => {
